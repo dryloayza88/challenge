@@ -20,6 +20,12 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
+            post {
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
         }
         stage ('Build docker image') {
             steps {
