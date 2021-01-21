@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('Build Artifact') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean package'
             }
         }
         stage ('Test Artifact') {
