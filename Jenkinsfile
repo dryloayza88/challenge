@@ -1,5 +1,3 @@
-#!/usr/bin/env groovy
-
 pipeline {
     agent any
     tools {
@@ -48,7 +46,7 @@ pipeline {
             steps {
                 sh 'sleep 25'
                 sh 'curl -vv 172.17.0.3:8181'
-                sh 'curl -L 172.17.0.3:8181'
+                sh 'curl -L 172.17.0.3:8181/api'
             }
         }
     }
