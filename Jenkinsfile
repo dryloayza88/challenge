@@ -46,9 +46,9 @@ pipeline {
         }
         stage('Curl spring boot app'){
             steps {
-                sh 'sleep 40'
-                sh 'curl -vv 192.168.1.3:8181'
-                sh 'curl -L 192.168.1.3:8181'
+                sh 'sleep 25'
+                sh 'curl -vv 172.17.0.3:8181'
+                sh 'curl -L 172.17.0.3:8181'
             }
         }
     }
