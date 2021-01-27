@@ -51,10 +51,5 @@ pipeline {
                 sh 'curl -L 172.17.0.3:8181/api'
             }
         }
-        stage('Remove unused docker image') {
-            steps {
-                sh 'docker rmi intercorp-challenge:${BUILD_NUMBER}'
-            }
-        }
     }
 }
