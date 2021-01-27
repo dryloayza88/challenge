@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
     agent any
     tools {
@@ -47,6 +49,11 @@ pipeline {
                 sh 'sleep 25'
                 sh 'curl -vv 172.17.0.3:8181'
                 sh 'curl -L 172.17.0.3:8181/api'
+            }
+        }
+        stage('Remove unused docker image') {
+            steps {
+                sh 'docker rmi intercorp-challenge:${BUILD_NUMBER}'
             }
         }
     }
